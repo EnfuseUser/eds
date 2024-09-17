@@ -19,7 +19,6 @@
       "title": "Library",
       "environments": ["edit"],
       "url": "/tools/sidekick/library.html",
-      "isPalette": true,
       "includePaths": ["**.docx**"]
     }
   ]
