@@ -1,9 +1,9 @@
 {
-  "project": "Geeks franklin",
+  "project": "Enfuse franklin",
   "libraries": [
     {
       "text": "Blocks",
-      "paths": ["https://main--eds--aem-geeks.hlx.page/tools/sidekick/library.json"]
+      "paths": ["https://main--eds--aem-enfuseuser.hlx.page/tools/sidekick/library.json"]
     }
   ],
   "plugins": [
