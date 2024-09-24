@@ -3,7 +3,7 @@
   "libraries": [
     {
       "text": "Blocks",
-      "paths": ["https://main--eds--aem-enfuseuser.hlx.page/tools/sidekick/library.json"]
+      "paths": ["https://main--eds--enfuseuser.hlx.page/tools/sidekick/library.json"]
     }
   ],
   "plugins": [
