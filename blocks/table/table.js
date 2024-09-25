@@ -7,21 +7,21 @@ const { allCountries,abbreviation,africa,america,asia,australia,capital,continen
 
 async function createTableHeader(table){
   let tr=document.createElement("tr");
-  let sno=document.createElement("th");sno.appendChild(document.createTextNode(sNo));
-  let conuntry=document.createElement("th");conuntry.appendChild(document.createTextNode(countries));
-  let continenth=document.createElement("th");continenth.appendChild(document.createTextNode(continent));
-  let capitalh=document.createElement("th");capitalh.appendChild(document.createTextNode(capital));
-  let abbr=document.createElement("th");abbr.appendChild(document.createTextNode(abbreviation));
+  let sno=document.createElement("th");sno.appendChild(document.createTextNode("SNo"));
+  let conuntry=document.createElement("th");conuntry.appendChild(document.createTextNode("countries"));
+  let continenth=document.createElement("th");continenth.appendChild(document.createTextNode("continent"));
+  let capitalh=document.createElement("th");capitalh.appendChild(document.createTextNode("capital"));
+  let abbr=document.createElement("th");abbr.appendChild(document.createTextNode("Currency"));
   tr.append(sno);tr.append(conuntry);tr.append(capitalh);tr.append(continenth);tr.append(abbr);
   table.append(tr);
 }
 async function createTableRow(table,row,i){
   let tr=document.createElement("tr");
   let sno=document.createElement("td");sno.appendChild(document.createTextNode(i));
-  let conuntry=document.createElement("td");conuntry.appendChild(document.createTextNode(row.Country));
+  let conuntry=document.createElement("td");conuntry.appendChild(document.createTextNode(row.Countries));
   let continent=document.createElement("td");continent.appendChild(document.createTextNode(row.Capital));
   let capital=document.createElement("td");capital.appendChild(document.createTextNode(row.Continent));
-  let abbr=document.createElement("td");abbr.appendChild(document.createTextNode(row.Abbreviation));
+  let abbr=document.createElement("td");abbr.appendChild(document.createTextNode(row.Currency));
   tr.append(sno);tr.append(conuntry);tr.append(continent);tr.append(capital);tr.append(abbr);
   table.append(tr);
 }
@@ -31,7 +31,11 @@ async function createSelectMap(jsonURL){
   const { pathname } = new URL(jsonURL);
 
   const resp = await fetch(pathname);
-  optionsMap.set("all",allCountries);optionsMap.set("asia",asia);optionsMap.set("europe",europe);optionsMap.set("africa",africa);optionsMap.set("america",america);optionsMap.set("australia",australia);
+  optionsMap.set("all","default");
+  optionsMap.set("asia","asia");
+  optionsMap.set("europe","europe");
+  optionsMap.set("africa","africa");
+  optionsMap.set("america","america");
   const select=document.createElement('select');
   select.id = "region";
   select.name="region";
