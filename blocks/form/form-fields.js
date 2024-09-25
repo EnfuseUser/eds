@@ -1,4 +1,4 @@
-import { toClassName } from './aem.js';
+import { toClassName } from '../../scripts/aem.js';
 
 function createFieldWrapper(fd) {
   const fieldWrapper = document.createElement('div');
