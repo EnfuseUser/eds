@@ -1,4 +1,4 @@
-import createField from '../../scripts/form-fields.js';
+import createField from './form-fields.js';
 
 async function createForm(formHref, submitHref) {
   const { pathname } = new URL(formHref);
