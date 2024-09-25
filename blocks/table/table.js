@@ -1,8 +1,8 @@
 
 import { fetchPlaceholders,getMetadata } from '../../scripts/aem.js';
-const placeholders = await fetchPlaceholders(getMetadata("locale"));
+//const placeholders = await fetchPlaceholders(getMetadata("locale"));
 
-const { allCountries,abbreviation,africa,america,asia,australia,capital,continent,countries,europe,sNo} = placeholders;
+//const { allCountries,abbreviation,africa,america,asia,australia,capital,continent,countries,europe,sNo} = placeholders;
 
 
 async function createTableHeader(table){
