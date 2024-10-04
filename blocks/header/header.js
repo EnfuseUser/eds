@@ -121,7 +121,7 @@ function languageDropdownHandler(){
   const select = document.createElement('select');
 
   const currentLocals = getMetadata('locals') || localStorage.getItem('locals') || 'en';
-  
+
   const language = [
     { value: 'en', text: 'English' },
     { value: 'fr', text: 'French' },
@@ -144,7 +144,7 @@ function languageDropdownHandler(){
     const selectedLanguage = event.target.value;
     localStorage.setItem('locals', selectedLanguage)
 
-    const newUrl = `http://localhost:3000/${selectedLanguage}/`;
+    const newUrl = `${window.location.origin}/${selectedLanguage}/`;
     window.location.href = newUrl; // Redirect to the new URL
 
     const placeholder = await fetchPlaceholders(selectedLanguage);
