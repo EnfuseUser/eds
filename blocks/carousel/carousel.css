@@ -10,20 +10,21 @@
     place-items: center;
   }
 
+
   .slider {
     width: 100%;
-    max-width: 960px;
+   /*  max-width: 960px; */
     height: 450px;
     position: relative;
     overflow: hidden;
-    border-radius: 15px;
+    /* border-radius: 15px; */
     margin: auto;
   }
 
   .slide {
     width: 100%;
-    max-width: 960px;
-    height: 350px;
+   /*  max-width: 960px; 
+    height: 350px;*/
     position: absolute;
     transition: all 0.5s;
   }
@@ -31,11 +32,65 @@
   div.slide-text{
     position: absolute;
     width: 100%;
-    top:60%;
+    top:0;
     color: #fff;
     text-align: center;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
   }
 
+  .slide-text:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 500px;
+    background: #090909;
+    z-index: 0;
+    background: -moz-linear-gradient(0deg, #090909 15%, rgba(9, 9, 9, 0) 100%);
+    background: -webkit-linear-gradient(0deg, #090909 15%, rgba(9, 9, 9, 0) 100%);
+    background: linear-gradient(0deg, #090909 15%, rgba(9, 9, 9, 0) 100%);
+}
+
+  .slide-text p:first-child{
+    font-size: 50px;
+    font-weight: 800;
+    margin-bottom: 0;
+    z-index: 1;
+  }
+
+  .slide-text p:nth-child(2){
+    font-size: 26px;
+    margin-top: 0;
+    padding: 0 8%;
+    z-index: 1;
+  }
+
+  .slide-text p.button-container:last-child{
+    z-index: 1;
+  }
+  .slide-text p.button-container:last-child a{
+    min-width: 148px;
+    line-height: 46px;
+    font-size: 16px;
+    padding: 0 25px;
+    transition: all .5s ease;
+    background: linear-gradient(to right,#01b4d5 0,#0779b7 50%,#01b4d5 100%);
+
+    border-radius: 5px;
+    cursor: pointer;
+    letter-spacing: .2px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  
+  .slide-text p.button-container:last-child:hover{
+    background-position: right center;
+  }
   .btn {
     position: absolute;
     width: 40px;
@@ -47,7 +102,8 @@
     cursor: pointer;
     background-color: #fff;
     font-size: 18px;
-    color: black;
+    color: black;     
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.3); 
   }
 
   .btn:active {
@@ -58,8 +114,43 @@
     top: 45%;
     left: 2%;
   }
+  .btn-prev::before{
+    transform: rotate(180deg);
+    background: url('https://www.enfuse-solutions.com/wp-content/themes/enfuse/assets/images/slider-arrow-white.png') left bottom no-repeat;
+    margin-left: -10px;
+  }
+  .btn-prev::before, .btn-next::before{
+    content: '';   
+    position: relative;
+    z-index: 2;
+    width: 40px;
+    height: 40px;
+    margin-top: -10px;
+    background-size: cover;
+    display: block;
+    border-radius: 100%;  
+    transition: all .4s ease-in-out;
+  }
+
+  .btn-prev:hover, .btn-next:hover, .btn-prev:focus, .btn-next:focus{
+    background-color: #01b4d5;
+  }
+  .btn-prev:hover::before{
+    background: #01b4d5 url('https://www.enfuse-solutions.com/wp-content/themes/enfuse/assets/images/slider-arrow-white.png') left top no-repeat;
+    background-size: 40px;
+  }
 
   .btn-next {
     top: 45%;
     right: 2%;
+  }
+ 
+  .btn-next::before{
+    background: url('https://www.enfuse-solutions.com/wp-content/themes/enfuse/assets/images/slider-arrow-white.png') left bottom no-repeat;
+    background-size: 100%;
+    margin-left: -10px;
+  }
+  .btn-next:hover::before{
+    background: #01b4d5 url('https://www.enfuse-solutions.com/wp-content/themes/enfuse/assets/images/slider-arrow-white.png') left top no-repeat;
+    background-size: 100%;
   }
