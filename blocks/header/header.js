@@ -1,5 +1,9 @@
-import { getMetadata } from '../../scripts/aem.js';
+import { getMetadata, fetchPlaceholders } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
+
+console.log(getMetadata("locale"));
+const placeholders = await fetchPlaceholders(getMetadata("locale"));
+console.log("header", placeholders);
 
 // media query match that indicates mobile/tablet width
 const isDesktop = window.matchMedia('(min-width: 900px)');
@@ -115,6 +119,9 @@ function languageDropdownHandler(){
 
 
   const select = document.createElement('select');
+
+  const currentLocals = getMetadata('locals') || localStorage.getItem('locals') || 'en';
+  
   const language = [
     { value: 'en', text: 'English' },
     { value: 'fr', text: 'French' },
@@ -125,12 +132,24 @@ function languageDropdownHandler(){
     const option = document.createElement('option');
     option.value = lang.value;
     option.textContent = lang.text;
+
+    if(lang.value === currentLocals){
+      option.selected = true;
+    }
+
     select.appendChild(option);
   })
 
-  select.addEventListener('change', (event) => {
-    const selectedLanguage = language.find(lang => lang.value === event.target.value);
-    console.log(`Selected Language: ${selectedLanguage.value}`);
+  select.addEventListener('change', async (event) => {
+    const selectedLanguage = event.target.value;
+    localStorage.setItem('locals', selectedLanguage)
+
+    const newUrl = `http://localhost:3000/${selectedLanguage}/`;
+    window.location.href = newUrl; // Redirect to the new URL
+
+    const placeholder = await fetchPlaceholders(selectedLanguage);
+    console.log(`Selected Language: ${placeholder}`)
+    console.log(`New URL: ${newUrl}`)
   });
 
   languageContainer.appendChild(languageText);
