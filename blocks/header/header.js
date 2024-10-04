@@ -103,6 +103,42 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
   }
 }
 
+
+// create a language selection dropdown and display selected lang
+function languageDropdownHandler(){
+  const languageContainer = document.createElement('div');
+  languageContainer.className = 'language-dropdown-container';
+
+  const languageText = document.createElement('span');
+  languageText.className = 'lang-text';
+  languageText.textContent = 'Language';
+
+
+  const select = document.createElement('select');
+  const language = [
+    { value: 'en', text: 'English' },
+    { value: 'fr', text: 'French' },
+    { value: 'hi', text: 'Hindi' }, 
+  ];
+
+  language.forEach(lang => {
+    const option = document.createElement('option');
+    option.value = lang.value;
+    option.textContent = lang.text;
+    select.appendChild(option);
+  })
+
+  select.addEventListener('change', (event) => {
+    const selectedLanguage = language.find(lang => lang.value === event.target.value);
+    console.log(`Selected Language: ${selectedLanguage.value}`);
+  });
+
+  languageContainer.appendChild(languageText);
+  languageContainer.appendChild(select);
+  
+
+  return languageContainer;
+}
 /**
  * loads and decorates the header, mainly the nav
  * @param {Element} block The header block element
@@ -162,5 +198,12 @@ export default async function decorate(block) {
   const navWrapper = document.createElement('div');
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
+  
+
+  // create and append the language dropdown
+
+  const languageDropDown = languageDropdownHandler();
+  nav.append(languageDropDown);
+
   block.append(navWrapper);
 }

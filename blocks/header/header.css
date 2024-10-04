@@ -286,4 +286,17 @@ header nav .nav-sections ul > li > ul > li {
 /* tools */
 header nav .nav-tools {
   grid-area: tools;
+  display: none;
+}
+
+
+header nav .language-dropdown-container .lang-text{
+  font-size: 14px;
+  padding-right: 5px;
+}
+
+.language-dropdown-container select{
+  font-size: 16px;
+  border: 1px solid #a7a7a7;
+  padding: 5px;
 }
