@@ -18,7 +18,16 @@ header nav {
   max-width: 1248px;
   height: var(--nav-height);
   padding: 0 24px;
+  box-shadow: 0 0 5px rgba(0, 1, 1, .35);
+}
+
+header nav li{
   font-family: var(--body-font-family);
+  text-transform: uppercase;
+  transition: all .4s ease-in-out;
+}
+header nav li:hover{
+  color:#01b4d5;
 }
 
 header nav[aria-expanded='true'] {
@@ -52,6 +61,16 @@ header nav p {
 
 header nav a:any-link {
   color: currentcolor;
+}
+
+header nav .nav-brand a:any-link {
+
+  background: url('https://www.enfuse-solutions.com/wp-content/uploads/2022/09/enfuse-logo.png');
+  width: 160px;
+  height: 37px;
+  display: block;
+  background-size: 100%;
+  color: transparent;
 }
 
 /* hamburger */
@@ -175,6 +194,8 @@ header nav .nav-sections ul > li {
 
 header nav .nav-sections ul > li > ul {
   margin-top: 0;
+  box-shadow: 0 0 5px rgba(0,1,1,.35);
+  transition: all .4s ease-in-out;
 }
 
 header nav .nav-sections ul > li > ul > li {

@@ -16,11 +16,13 @@
   --light-color: #f8f8f8;
   --dark-color: #505050;
   --text-color: #131313;
-  --link-color: #3b63fb;
+  --link-color: #01b4d5;
   --link-hover-color: #1d3ecf;
+  --footer-bg: #212d39;
 
   /* fonts */
-  --body-font-family: roboto, roboto-fallback, sans-serif;
+  /* --body-font-family: roboto, roboto-fallback, sans-serif; */
+  --body-font-family: Poppins, sans-serif;
   --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
 
   /* body sizes */
@@ -254,4 +256,36 @@ main .section.highlight {
   background-color: var(--light-color);
   margin: 0;
   padding: 40px 0;
+}
+
+main > .section>div.carousel-wrapper{
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+}
+main > .section.carousel-container{
+  padding: 0;
+}
+
+.what-we-do {
+  text-align: center;
+}
+
+.what-we-do div div p{
+  font-size: 40px;
+  margin-top: 13px;
+  margin-bottom: 15px;
+  line-height: 50px;
+  font-weight: 700;
+  color: #212d39;
+  margin-top: 0;
+}
+
+.what-we-do div ~ div div p{
+  font-size: 16px;
+  color: #666;
+  line-height: 24px;
+  font-weight: 400;
+  max-width: 65%;
+  margin: 0 auto;
 }
