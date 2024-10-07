@@ -1,0 +1,41 @@
+.why-enfuse > div:first-child > div{
+width: 50%;
+}
+
+.why-enfuse > div:first-child > div ~ div{
+  margin-left: 3%;
+}
+.why-enfuse > div:first-child{
+  display: flex;
+  justify-content: space-between;
+}
+
+.why-enfuse table tr td{
+  border: none;
+  background: none;
+}
+
+
+.why-enfuse p:first-child{
+  font-size: 40px;
+  line-height: 52px;
+  color: var(--text-color);
+  font-weight: 700;
+}
+
+.why-enfuse table td:nth-child(2) p{
+  font-size: 16px;
+    color: #666;
+    font-family: muliregular, Arial, Helvetica, sans-serif;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.why-enfuse table{
+  margin-top: 40px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, .17);
+}
+
+.why-enfuse table tr td{
+  padding: 20px;
+}

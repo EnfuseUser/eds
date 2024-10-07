@@ -1,0 +1,23 @@
+
+.what-we-do {
+    text-align: center;
+  }
+  
+  .what-we-do div div p{
+    font-size: 40px;
+    margin-top: 13px;
+    margin-bottom: 15px;
+    line-height: 50px;
+    font-weight: 700;
+    color: #212d39;
+    margin-top: 0;
+  }
+  
+  .what-we-do div ~ div div p{
+    font-size: 16px;
+    color: #666;
+    line-height: 24px;
+    font-weight: 400;
+    max-width: 65%;
+    margin: 0 auto;
+  }

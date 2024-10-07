@@ -1,9 +1,7 @@
 import { getMetadata, fetchPlaceholders } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
 
-console.log(getMetadata("locale"));
 const placeholders = await fetchPlaceholders(getMetadata("locale"));
-console.log("header", placeholders);
 
 // media query match that indicates mobile/tablet width
 const isDesktop = window.matchMedia('(min-width: 900px)');
