@@ -1,41 +1,98 @@
-.why-enfuse > div:first-child > div{
-width: 50%;
+.why-enfuse>div:first-child>div {
+  width: 50%;
 }
 
-.why-enfuse > div:first-child > div ~ div{
+.why-enfuse>div:first-child>div~div {
   margin-left: 3%;
 }
-.why-enfuse > div:first-child{
+
+.why-enfuse>div:first-child {
   display: flex;
   justify-content: space-between;
 }
 
-.why-enfuse table tr td{
+.why-enfuse table tr td {
   border: none;
   background: none;
 }
 
 
-.why-enfuse p:first-child{
+.why-enfuse p:first-child {
   font-size: 40px;
   line-height: 52px;
   color: var(--text-color);
   font-weight: 700;
 }
 
-.why-enfuse table td:nth-child(2) p{
+.why-enfuse table td:nth-child(2) p,
+.why-choose-enfuse-container .accordion-wrapper details[open] .accordion-item-body p {
   font-size: 16px;
-    color: #666;
-    font-family: muliregular, Arial, Helvetica, sans-serif;
-    line-height: 24px;
-    font-weight: 400;
+  color: #666;
+  font-family: muliregular, Arial, Helvetica, sans-serif;
+  line-height: 24px;
+  font-weight: 400;
 }
 
-.why-enfuse table{
+.why-choose-enfuse-container .accordion-wrapper {
   margin-top: 40px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, .17);
 }
 
-.why-enfuse table tr td{
+.why-choose-enfuse-container .accordion-wrapper .accordion-item {
+  margin-bottom: 20px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, .17);
   padding: 20px;
+  border: none;
+}
+
+.why-choose-enfuse-container .accordion-wrapper .accordion-item .accordion-item-label {
+  padding: 0;
+  overflow: inherit;
+}
+
+.why-choose-enfuse-container .accordion-wrapper .accordion-item .accordion-item-label:hover,
+.why-choose-enfuse-container .accordion-wrapper .accordion-item .accordion-item-label:focus,
+.why-choose-enfuse-container .accordion-wrapper .accordion-item .accordion-item-label:active {
+  background-color: transparent;
+}
+
+.why-choose-enfuse-container .accordion-wrapper .accordion-item .accordion-item-label p {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: Poppins, sans-serif;
+  color: #1f497d;
+}
+
+.why-choose-enfuse-container .accordion-wrapper .accordion-item[open] .accordion-item-label p {
+  color: #01b4d5;
+  text-decoration: none;
+}
+
+.why-choose-enfuse-container .accordion-wrapper .accordion-item .accordion-item-label p:empty {
+  display: none;
+}
+
+.why-choose-enfuse-container .accordion-wrapper details[open] .accordion-item-body {
+  border: none;
+  padding: 0;
+  background: none;
+}
+
+.why-choose-enfuse-container .accordion-wrapper .accordion-item .accordion-item-label::after{
+  width: 28px;
+  height: 28px;
+  border: 1px solid  var(--link-color);;
+  border-radius: 100%;
+  content: '+';
+  top: 0;
+  transform: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  color: var(--link-color);
+}
+
+.why-choose-enfuse-container .accordion-wrapper details[open] .accordion-item-label::after{
+  content: '-';
 }

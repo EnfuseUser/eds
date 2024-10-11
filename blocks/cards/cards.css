@@ -56,3 +56,36 @@
 .cards-card-body > p > strong:hover{
   color: #01b4d5;
 }
+
+.cards.single-image-right,
+.cards.single-image-left{
+  ul{
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  }
+  li{
+    display: flex;
+
+    .cards-card-body{
+      width: 65%;
+    }
+
+    .cards-card-image{
+      width: 35%;
+
+      img{
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+  }
+}
+
+.cards.single-image-left{
+  .cards-card-image{
+
+    img{
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+}

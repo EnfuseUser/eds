@@ -1,22 +1,53 @@
-.button{
+.button-container{
+    display: inline-flex;
+}
+.button.block a{
     min-width: 148px;
     line-height: 46px;
     font-size: 16px;
     padding: 0 25px;
-    transition: all .5s ease;
-    background: linear-gradient(to right,#01b4d5 0,#0779b7 50%,#01b4d5 100%);
-
-    border-radius: 5px;
+    transition: all .5s ease;    
     cursor: pointer;
     letter-spacing: .2px;
+    border-radius: 5px;
     text-transform: uppercase;
     font-weight: 600;
-    
-
+    margin: 0;
+}
+.button.primary a{  
+    background: linear-gradient(to right,#01b4d5 0,#0779b7 50%,#01b4d5 100%);   
     background-size: 200% auto;
     background-position: left center;  
 }
 
-.button:hover{
+.button.primary:hover a{
     background-position: right center;
+}
+
+.button.secondary a{
+    background: none;
+    color: var(--text-color);
+    border: 1px solid  var(--link-color);
+}
+
+.button.secondary:hover a{
+    color: var(--link-color);
+}
+
+.button.text a{
+    background: none;
+    color: var(--link-color);
+}
+.button.text:hover a{
+    background: none;
+    color: var(--text-color);
+}
+
+.button.text-with-icon a{
+    background: none;
+    color: var(--link-color);
+}
+.button.text-with-icon:hover a{
+    background: none;
+    color: var(--text-color);
 }

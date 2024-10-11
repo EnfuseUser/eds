@@ -1,17 +1,18 @@
-export default function decorateButtons(block) {
+export default function decorate(block) {
 
     const button = document.createElement('a');
 
-    const link = block.dataset.link || '#';
-    const label = block.dataset.label || 'Click Me';
-    const cssClass = block.dataset.class || 'default-button';
+    const link = '#';
+    const label = 'Click Me';
+    const cssClass = 'button-default'; 
+    const type = 'primary'; 
 
     button.href = link;
-    button.className = `button ${cssClass}`;
+    button.className = `button ${cssClass} ${type}`;
     button.textContent = label;
 
     button.addEventListener('click', (event) => {
-        console.log('Button Clicked', label)
+        console.log('Button Clicked:', label);
     });
 
     block.textContent = '';
