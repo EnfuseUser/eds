@@ -1,7 +1,9 @@
-import { getMetadata, fetchPlaceholders } from '../../scripts/aem.js';
+import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
 
-const placeholders = await fetchPlaceholders(getMetadata("locale"));
+console.log(getMetadata('locale'));
+// const placeholders = await fetchPlaceholders(getMetadata('locale'));
+// console.log('header', placeholders);
 
 // media query match that indicates mobile/tablet width
 const isDesktop = window.matchMedia('(min-width: 900px)');
@@ -105,16 +107,14 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
   }
 }
 
-
 // create a language selection dropdown and display selected lang
-function languageDropdownHandler(){
+function languageDropdownHandler() {
   const languageContainer = document.createElement('div');
   languageContainer.className = 'language-dropdown-container';
 
   const languageText = document.createElement('span');
   languageText.className = 'lang-text';
   languageText.textContent = 'Language';
-
 
   const select = document.createElement('select');
 
@@ -123,36 +123,35 @@ function languageDropdownHandler(){
   const language = [
     { value: 'en', text: 'English' },
     { value: 'fr', text: 'French' },
-    { value: 'hi', text: 'Hindi' }, 
+    { value: 'hi', text: 'Hindi' },
   ];
 
-  language.forEach(lang => {
+  language.forEach((lang) => {
     const option = document.createElement('option');
     option.value = lang.value;
     option.textContent = lang.text;
 
-    if(lang.value === currentLocals){
+    if (lang.value === currentLocals) {
       option.selected = true;
     }
 
     select.appendChild(option);
-  })
+  });
 
   select.addEventListener('change', async (event) => {
-    const selectedLanguage = event.target.value;
-    localStorage.setItem('locals', selectedLanguage)
+    const selectedLanguage = `/${event.target.value}/`;
+    const langswitch = `/${getMetadata('locale')}/`;
+    localStorage.setItem('locals', event.target.value);
+    const redirecturl = (window.location.href).replace(langswitch, selectedLanguage);
+    window.location.href = redirecturl; // Redirect to the new URL
 
-    const newUrl = `${window.location.origin}/${selectedLanguage}/`;
-    window.location.href = newUrl; // Redirect to the new URL
-
-    const placeholder = await fetchPlaceholders(selectedLanguage);
-    console.log(`Selected Language: ${placeholder}`)
-    console.log(`New URL: ${newUrl}`)
+    // const placeholder = await fetchPlaceholders(selectedLanguage);
+    // console.log(`Selected Language: ${placeholder}`);
+    console.log(`New URL: ${redirecturl}`);
   });
 
   languageContainer.appendChild(languageText);
   languageContainer.appendChild(select);
-  
 
   return languageContainer;
 }
@@ -215,7 +214,6 @@ export default async function decorate(block) {
   const navWrapper = document.createElement('div');
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
-  
 
   // create and append the language dropdown
 

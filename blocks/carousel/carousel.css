@@ -86,12 +86,9 @@
     letter-spacing: .2px;
     text-transform: uppercase;
     font-weight: 600;
-    
-  background-size: 200% auto;
-  background-position: left center;  
   }
   
-  .slide-text p.button-container:last-child:hover a{
+  .slide-text p.button-container:last-child:hover{
     background-position: right center;
   }
   .btn {
