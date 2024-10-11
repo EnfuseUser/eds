@@ -1,6 +1,13 @@
 .button-container{
-    display: inline-flex;
+    border: 1px solid red;
+   p{
+     margin: 0;
+   }
+   a{
+    margin: 0;
+   }
 }
+
 .button.block a{
     min-width: 148px;
     line-height: 46px;

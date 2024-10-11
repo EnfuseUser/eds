@@ -89,3 +89,7 @@
     }
   }
 }
+
+.cards-without-image .cards-card-body {
+  border: 1px solid red;
+}
