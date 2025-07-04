@@ -258,6 +258,9 @@ main .section.highlight {
   padding: 40px 0;
 }
 
+main .section.red {
+  background-color: red;
+}
 main > .section>div.carousel-wrapper{
   padding: 0;
   margin: 0;
