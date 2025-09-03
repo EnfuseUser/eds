@@ -1,14 +1,20 @@
 import '../../scripts/reveal.js/dist/reveal.js';
 import RevealHighlight from '../../scripts/reveal.js/plugin/highlight/highlight.esm.js'
+import { loadFragment } from '../fragment/fragment.js';
 
-export default function decorate(block) {
+export default async function decorate(block) {
 
+  //logo fragment
+  const fragment = await loadFragment('/fragments/logo');
+  const logoSrc = fragment?.querySelector('img').src
+  
+  
 
   function welcomeSlide(row) {
     const [classNameEl, titileEl, descFirstEl, descSecondEl] = row.children
     return `
     <section class="${classNameEl.innerText}">
-      <h1>${titileEl?.innerText}</h1>
+    <h1>${titileEl?.innerText}</h1>
       ${descFirstEl?.innerHTML}
       ${descSecondEl?.innerHTML}
     </section>
@@ -44,7 +50,7 @@ export default function decorate(block) {
     return `
     <section class="${classNameEl.innerText}">
       <h1>${titileEl.innerText}</h1>
-      <div class="logo"><span>En</span>ꟻuse</div>
+      <div class="logo"><img src="${logoSrc}" alt="Logo image"></div>
       ${ulElement.innerHTML}
     </section>
     `
@@ -57,7 +63,7 @@ export default function decorate(block) {
       return `
        <section class="${classNameEl.innerText}">
          <h1>${titileEl.innerText}</h1>
-         <div class="logo"><span>En</span>ꟻuse</div>
+         <div class="logo"><img src="${logoSrc}" alt="Logo image"></div>
          <div class="slide-container-main">
            <div class="slide-container-left fragment">
               ${descFirstEl.innerHTML}
@@ -72,7 +78,7 @@ export default function decorate(block) {
     return `
     <section class="${classNameEl.innerText}">
       <h1>${titileEl.innerText}</h1>
-      <div class="logo"><span>En</span>ꟻuse</div>
+      <div class="logo"><img src="${logoSrc}" alt="Logo image"></div>
       <section>
         <div class="slide-container-top">
           ${descFirstEl.innerHTML}
@@ -93,7 +99,7 @@ export default function decorate(block) {
     return `
     <section class="${classNameEl.innerText}">
       <h1>${titileEl?.innerText}</h1>
-      <div class="logo"><span>En</span>ꟻuse</div>
+      <div class="logo"><img src="${logoSrc}" alt="Logo image"></div>
       <div class="table-top fragment">${descFirstEl.innerHTML}</div>
       <div class="table-bottom fragment">${descSecondEl.innerHTML}</div>
     </section>
@@ -116,8 +122,23 @@ export default function decorate(block) {
     return `
     <section class="${classNameEl.innerText}">
       <h1>${titileEl.innerText}</h1>
-      <div class="logo"><span>En</span>ꟻuse</div>
+      <div class="logo"><img src="${logoSrc}" alt="Logo image"></div>
       ${divElement.innerHTML}
+    </section>
+    `
+  }
+
+  function specificationTableSlide(row) {
+    const [classNameEl, titileEl, descFirstEl, descSecondEl] = row.children
+    descFirstEl.querySelectorAll('table tbody tr').forEach((row, index) => {
+  row.classList.add('fragment');
+});
+    
+    return `
+    <section class="${classNameEl.innerText}">
+      <h1>${titileEl?.innerText}</h1>
+      <div class="logo"><img src="${logoSrc}" alt="Logo image"></div>
+      <div class="specification-table">${descFirstEl?.innerHTML}</div>
     </section>
     `
   }
@@ -170,6 +191,10 @@ export default function decorate(block) {
         section = imageListSlide(row);
         mainDiv.insertAdjacentHTML('beforeend', section);
         break;
+      case "slide-specification-table":
+        section = specificationTableSlide(row);
+        mainDiv.insertAdjacentHTML('beforeend', section);
+        break;
       case "slide-thankyou":
         section = thankyouSlide(row);
         mainDiv.insertAdjacentHTML('beforeend', section);
@@ -196,4 +221,16 @@ export default function decorate(block) {
     plugins: [RevealHighlight],
   }).initialize();
 
+    const themeMeta = document.querySelector('[data-theme-attr]')
+  const theme = themeMeta ? themeMeta.getAttribute('data-theme-attr') : 'white';
+  
+  const themeLink = document.createElement('link');
+  themeLink.rel = 'stylesheet';
+  themeLink.href = `../../scripts/reveal.js/dist/theme/${theme}.css`;
+  document.head.appendChild(themeLink);
+
+  const localStyle = document.createElement('link');
+  localStyle.rel = 'stylesheet';
+  localStyle.href = '../../blocks/presentation/presentation.css';
+  document.head.appendChild(localStyle);
 }
