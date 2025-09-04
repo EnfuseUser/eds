@@ -1,6 +1,4 @@
 
-@import url('../../scripts/reveal.js/dist/theme/sky.css');
-
 .reveal {
 
  h1 { font-size: var(--heading-font-size-xxl); }
