@@ -18,8 +18,9 @@ export default async function decorate(block) {
   // document.head.appendChild(localStyle);
 
   //logo fragment
-  const fragment = await loadFragment('/fragments/logo');
-  const logoSrc = fragment?.querySelector('img').src
+  // const fragment = await loadFragment('/fragments/logo');
+  // const logoSrc = fragment?.querySelector('img').src
+  const logoSrc = 'abc'
   
   
 
