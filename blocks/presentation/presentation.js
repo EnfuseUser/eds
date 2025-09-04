@@ -4,6 +4,19 @@ import { loadFragment } from '../fragment/fragment.js';
 
 export default async function decorate(block) {
 
+  const themeMeta = document.querySelector('[data-theme-attr]')
+  const theme = themeMeta ? themeMeta.getAttribute('data-theme-attr') : 'white';
+  
+  const themeLink = document.createElement('link');
+  themeLink.rel = 'stylesheet';
+  themeLink.href = `../../scripts/reveal.js/dist/theme/${theme}.css`;
+  document.head.appendChild(themeLink);
+
+  const localStyle = document.createElement('link');
+  localStyle.rel = 'stylesheet';
+  localStyle.href = '../../blocks/presentation/presentation.css';
+  document.head.appendChild(localStyle);
+
   //logo fragment
   const fragment = await loadFragment('/fragments/logo');
   const logoSrc = fragment?.querySelector('img').src
@@ -221,16 +234,4 @@ export default async function decorate(block) {
     plugins: [RevealHighlight],
   }).initialize();
 
-    const themeMeta = document.querySelector('[data-theme-attr]')
-  const theme = themeMeta ? themeMeta.getAttribute('data-theme-attr') : 'white';
-  
-  const themeLink = document.createElement('link');
-  themeLink.rel = 'stylesheet';
-  themeLink.href = `../../scripts/reveal.js/dist/theme/${theme}.css`;
-  document.head.appendChild(themeLink);
-
-  const localStyle = document.createElement('link');
-  localStyle.rel = 'stylesheet';
-  localStyle.href = '../../blocks/presentation/presentation.css';
-  document.head.appendChild(localStyle);
 }
