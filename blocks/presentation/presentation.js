@@ -223,7 +223,7 @@ export default async function decorate(block) {
   }).initialize();
 
     const themeMeta = document.querySelector('[data-theme-attr]')
-  const theme = themeMeta ? themeMeta.getAttribute('data-theme-attr') : 'white';
+  const theme = themeMeta ? themeMeta.getAttribute('data-theme-attr') : 'black';
   
   const themeLink = document.createElement('link');
   themeLink.rel = 'stylesheet';
