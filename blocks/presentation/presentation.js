@@ -5,9 +5,9 @@ import { loadFragment } from '../fragment/fragment.js';
 export default async function decorate(block) {
 
   //logo fragment
-  // const fragment = await loadFragment('/fragments/logo');
-  // const logoSrc = fragment?.querySelector('img').src
-  const logoSrc = 'abc'
+  const fragment = await loadFragment('/fragments/logo');
+  const logoSrc = fragment?.querySelector('img').src
+  // const logoSrc = 'abc'
   
   
 
