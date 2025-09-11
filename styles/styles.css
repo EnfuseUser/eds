@@ -40,6 +40,9 @@
 
   /* nav height */
   --nav-height: 64px;
+
+  /* heading width for border */
+  --heading-width: 86%
 }
 
 /* fallback fonts */
@@ -58,14 +61,15 @@
 @media (width >= 900px) {
   :root {
     /* body sizes */
+    --body-font-size-l:24px;
     --body-font-size-m: 18px;
     --body-font-size-s: 16px;
     --body-font-size-xs: 14px;
 
     /* heading sizes */
-    --heading-font-size-xxl: 45px;
-    --heading-font-size-xl: 36px;
-    --heading-font-size-l: 28px;
+    --heading-font-size-xxl: 38px;
+    --heading-font-size-xl: 28px;
+    --heading-font-size-l: 24px;
     --heading-font-size-m: 22px;
     --heading-font-size-s: 20px;
     --heading-font-size-xs: 18px;
@@ -172,7 +176,7 @@ a.button:any-link,
 button {
   box-sizing: border-box;
   display: inline-block;
-  max-width: 100%;
+  /* max-width: 100%; */
   margin: 12px 0;
   border: 2px solid transparent;
   border-radius: 2.4em;
@@ -255,7 +259,7 @@ main .section.light,
 main .section.highlight {
   background-color: var(--light-color);
   margin: 0;
-  padding: 40px 0;
+  padding: 0 0;
 }
 
 main > .section>div.carousel-wrapper{
@@ -288,4 +292,24 @@ main > .section.carousel-container{
   font-weight: 400;
   max-width: 65%;
   margin: 0 auto;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* footer {
+  display: none;
+}
+
+header {
+  display: none;
+} */
+
+.logo {
+  img {
+    margin: 0;
+    padding: 0;
+  }
 }
