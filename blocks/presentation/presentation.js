@@ -51,9 +51,11 @@ export default async function decorate(block) {
 
     return `
     <section class="${classNameEl.innerText}">
-      <h1>${titileEl.innerText}</h1>
-      <div class="logo"><img src="${logoSrc}" alt="Logo image"></div>
-      ${ulElement.innerHTML}
+    <div class="sub-div">
+    <h1>${titileEl.innerText}</h1>
+    <div class="logo"><img src="${logoSrc}" alt="Logo image"></div>
+    ${ulElement.innerHTML}
+    </div>
     </section>
     `
   }

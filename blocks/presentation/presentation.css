@@ -30,10 +30,12 @@
     margin: 0;
     padding: 0;
     line-height: 50px;
+    color: black;
   }
 
   h4 {
     margin-top: 10px;
+    color: black;
   }
 }
 
@@ -106,14 +108,14 @@
   text-align: left;
 
   .slide-container-top {
-    background-color: #f2f2f2;
+    background-color: #888888;
     h2 {
       border-bottom: solid 2px #da79c9;
       padding: 5px;
     }
   }
   .slide-container-bottom {
-    background-color: #eeece1;
+    background-color: #708090;
     h2 {
       border-bottom: solid 2px #94d7db;
       padding: 5px;
@@ -166,9 +168,9 @@
   }
 
   .table-top {
-    /* background-color: #fff8f7; */
-    box-shadow: 0 4px 8px blue;
-    /* border: solid 1px red; */
+    background-color: #888888;
+    /* box-shadow: 0 4px 8px blue; */
+    border: solid 1px red;
     padding: 20px;
   }
 
@@ -205,6 +207,7 @@
     margin-top: 250px;
     margin-right: 420px;
     font-weight: 700;
+    color: black;
   }
 }
 
