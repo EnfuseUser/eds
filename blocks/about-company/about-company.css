@@ -1,0 +1,86 @@
+.about-company > div:first-child{
+  display: flex;
+  justify-content: space-between;
+}
+
+.about-company > div:first-child > div{
+  width: 50%;
+}
+
+.about-company > div:first-child > div ~ div{
+  margin-left: 3%;
+}
+
+
+.about-company p:first-child{
+  font-size: 16px;
+  color: #01b4d5;
+  font-weight: 400;
+  font-family: Poppins, sans-serif;
+  text-transform: uppercase;
+}
+
+.about-company p:nth-child(2){
+  font-size: 40px;
+  margin-top: 13px;
+  margin-bottom: 15px;
+  line-height: 50px;
+  color: var(--text-color);
+  font-weight: 700;
+}
+
+
+.about-company p:nth-child(3),
+.about-company p:nth-child(4),
+.about-company > div:first-child table tr:nth-child(3) td{
+  font-size: 16px;
+    color: #666;
+    font-family: muliregular, Arial, Helvetica, sans-serif;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.about-company > div:first-child table{
+  margin-top: 50px;
+}
+.about-company > div:first-child table img{
+width: 50px;
+}
+
+.about-company > div:first-child table tr:nth-child(2) td{
+  font-size: 22px;
+  margin: 17px 0 7px;
+  font-weight: 600;
+  line-height: normal;
+  color: var(--text-color);
+  padding: 10px 0;
+}
+
+.about-company > div:first-child table tr:last-child td a{
+  min-width: 148px;
+  line-height: 46px;
+  font-size: 16px;
+  padding: 0 25px;
+  transition: all .5s ease;
+  background: linear-gradient(to right,#01b4d5 0,#0779b7 50%,#01b4d5 100%);
+  border-radius: 5px;
+  cursor: pointer;
+  letter-spacing: .2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  background-size: 200% auto;
+  background-position: left center;  
+  margin-top: 30px;
+}
+
+.about-company > div:first-child table tr:last-child td:first-child:hover a{
+  background-position: right center;
+}
+
+.about-company > div:first-child table tr td, .why-enfuse table tr td{
+  border: none;
+  background: none;
+}
